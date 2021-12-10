@@ -37,7 +37,7 @@ pipeline{
                 type: 'war']], 
                 credentialsId: 'b50c9160-deca-4804-b0ed-ddd4a01f1ea0', 
                 groupId: 'com.vinaysdevopslab', 
-                nexusUrl: '3.238.123.71:8081', 
+                nexusUrl: '18.208.187.71:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'VinaysDevOpsLab-SNAPSHOT', 
