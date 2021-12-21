@@ -31,22 +31,8 @@ pipeline{
         stage ('Publish to nexus'){
 
             steps{
-                scrpt{
-                    def NexusRepo = version.endWith("SNAPSHOT") ? "VinayDevOpsLab-SNAPSHOT" : "VinayDevOpsLab-RELEASE"
-                nexusArtifactUploader artifacts:
-                [[artifactId: 'VinayDevOpsLab', 
-                classifier: '', 
-                file: "target/${ArtifactId}-${Version}.war", 
-                type: 'war']], 
-                credentialsId: 'b50c9160-deca-4804-b0ed-ddd4a01f1ea0', 
-                groupId: 'com.vinaysdevopslab', 
-                nexusUrl: '44.200.15.225:8081', 
-                nexusVersion: 'nexus3', 
-                protocol: 'http', 
-                repository: "${NexusRepo}", 
-                version: "${Version}"
-                }
-        }
+                nexusArtifactUploader artifacts: [[artifactId: 'VinayDevOpsLab', classifier: '', file: '/target-VinayDevOpsLab-0.0.9-SNAPSHOT.war', type: 'war']], credentialsId: '65f75adb-8a2e-4b9b-a27f-f4fc07a1463a', groupId: 'com.vinaysdevopslab', nexusUrl: '44.200.15.225:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'VinayDevOpsLab-SNAPSHOT', version: '0.0.9-SNAPSHOT'
+            }
         }
         //stage4: Print Imp Information
         stage ('Print Environment Variables'){
